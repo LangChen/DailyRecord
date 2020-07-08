@@ -40,7 +40,7 @@
         </commentGenerator>
         <!-- 配置数据库链接 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/employees?characterEncoding=UTF-8"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/DailyRecord?characterEncoding=UTF-8"
                         userId="root"
                         password="root"/>
         <!-- 生成的实体类位置 -->
@@ -50,6 +50,10 @@
         <!-- 生成的mapper 接口位置-->
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.chlang.mapper" targetProject="src/main/java"/>
         <!-- 需要操作的数据库表 -->
-        <table tableName="employees"/>
+        <table tableName="user_info" domainObjectName="UserInfo"/>
+        <table tableName="user_auth" domainObjectName="UserAuth"/>
+        <table tableName="chat_info" domainObjectName="ChatInfo"/>
+        <table tableName="chat_user_ref" domainObjectName="ChatUserRef"/>
+        <table tableName="chat_message" domainObjectName="ChatMessage"/>
     </context>
 </generatorConfiguration>

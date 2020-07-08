@@ -34,14 +34,14 @@ public class AuthController {
      */
     @ControllerWebLog(apiName = "auth/login")
     @PostMapping("/login")
-    public PlatformHttpResult login(@RequestBody Map<String,Object> loginInfo){
+    public PlatformHttpResult loginWithAccount(@RequestBody Map<String,Object> loginInfo){
         if (!loginInfo.containsKey("userAccount") || !loginInfo.containsKey("password")){
             return PlatformHttpResult.errorWithMsg(ErrorCode.UN_KNOW_ERROR,"参数出错");
         }
         String userAccount = loginInfo.get("userAccount").toString();
         String password = loginInfo.get("password").toString();
 
-        return authService.commonUserLogin(userAccount,password);
+        return authService.commonUserLoginWithAccount(userAccount,password);
     }
 
 }
